@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="9c59070c-e600-4b1c-ad59-554fe9f31541" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testcommitFlow" doc:id="428d2bfc-a1fe-4948-8793-ca17ac593a69" >
+		<http:listener doc:name="Listener" doc:id="d11c98d6-a3b1-40c3-aef8-10fe80ed44c5" path="/testcommit" config-ref="HTTP_Listener_config"/>
+		<set-payload value="payload" doc:name="Set Payload" doc:id="143fc887-5714-4989-9439-c663f5b1251b" />
+	</flow>
+</mule>
